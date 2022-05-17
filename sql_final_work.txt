@@ -1,0 +1,90 @@
+CREATE TABLE customers(
+id_customer serial not null,
+identification varchar(50) not null,
+name varchar(200) not null,
+lastname varchar(200) not null,
+address varchar(50) not null,
+phonenumber varchar(50) not null,
+constraint PK_CUSTOMER primary key (id_customer)
+);
+
+ALTER TABLE customers owner to user_node;
+
+CREATE TABLE editorials(
+id_editorial serial not null,
+name varchar(200) not null,
+country varchar (50) not null,
+phone varchar(20) not null,
+constraint PK_EDITORIAL primary key (id_editorial)
+);
+ALTER TABLE editorials owner to user_node;
+
+CREATE TABLE authors(
+id_author serial not null,
+name varchar(200) not null,
+lastname varchar(200) not null,
+nationality varchar(200) not null,
+description varchar(200) not null,
+constraint PK_AUTOR primary key (id_author)
+);
+ALTER TABLE authors owner to user_node;
+
+CREATE TABLE loans(
+id_loan serial not null,
+start_date date not null,
+description varchar(200) not null,
+id_customer int4 not null,
+constraint PK_LOANS primary key (id_loan)
+);
+ALTER TABLE loans owner to user_node;
+ALTER TABLE loans add constraint fk_customer_loan  Foreign key(id_customer)
+REFERENCES customers(id_customer) on delete restrict on update cascade;
+
+CREATE TABLE books(
+id_book serial not null,
+title varchar(200) not null,
+publication_date date not null,
+code integer not null,
+isbn varchar(10) not null,
+id_editorial int4 not null,
+constraint PK_BOOK primary key(id_book)
+);
+ALTER TABLE books owner to user_node;
+ALTER TABLE books add constraint fk_editorial_book Foreign key(id_editorial)
+REFERENCES editorials(id_editorial) on delete restrict on update cascade;
+
+CREATE TABLE details_loans(
+id_detail_loan serial not null,
+id_loan int4 not null,
+id_book int4 not null,
+return_date date not null,
+overdue_day integer not null,
+description varchar(200) not null,
+deliver_date date not null,
+constraint PK_DETAILS_LOANS primary key(id_detail_loan)
+);
+ALTER TABLE details_loans owner to user_node;
+ALTER TABLE details_loans add constraint fk_loans_detail_loans Foreign key(id_loan)
+REFERENCES loans(id_loan) on delete restrict on update cascade;
+ALTER TABLE details_loans add constraint fk_book_detail_loans Foreign key(id_book)
+REFERENCES books(id_book) on delete restrict on update cascade;
+
+create TABLE authors_books(
+id_author_book SERIAL NOT NULL,
+id_book INT4 not null,
+id_author INT4 not null,
+constraint PK_AUTHORS_BOOKS primary key(id_author_book)
+);
+ALTER TABLE authors_books owner to user_node;
+ALTER TABLE authors_books add constraint fk_books_authors_books Foreign key(id_book)
+REFERENCES books(id_book) on delete restrict on update cascade;
+ALTER TABLE authors_books add constraint fk_author_authors_books Foreign key(id_author)
+REFERENCES authors(id_author) on delete restrict on update cascade;
+
+SELECT * FROM customers;
+select * from editorials;
+select * from authors;
+select * from loans;
+select * from books;
+select * from details_loans;
+SELECT * from authors_books;
