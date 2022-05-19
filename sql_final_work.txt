@@ -88,3 +88,13 @@ select * from loans;
 select * from books;
 select * from details_loans;
 SELECT * from authors_books;
+
+
+
+-------------------------------------------------------------------------------------------------
+Models code inserts
+Customers model
+Editorils model
+Authors model
+Loans model
+Books model
