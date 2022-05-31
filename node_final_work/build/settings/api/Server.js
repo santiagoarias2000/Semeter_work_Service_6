@@ -9,6 +9,7 @@ const express_1 = __importDefault(require("express"));
 const CustomerRoutes_1 = __importDefault(require("../../routes/CustomerRoutes"));
 const EditorialRoutes_1 = __importDefault(require("../../routes/EditorialRoutes"));
 const AuthorRoutes_1 = __importDefault(require("../../routes/AuthorRoutes"));
+const LoansRoutes_1 = __importDefault(require("../../routes/LoansRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -26,6 +27,7 @@ class Server {
         this.app.use('/api/customer', CustomerRoutes_1.default);
         this.app.use('/api/editorial', EditorialRoutes_1.default);
         this.app.use('/api/author', AuthorRoutes_1.default);
+        this.app.use('/api/loans', LoansRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('PORT'), () => {

@@ -1,4 +1,4 @@
-export const SQL_AUTHOR_SEARCH = {
-    CARGAR: 'SELECT id_author, name, lastname, description,nationality  \
-    FROM authors WHERE id_author = $1',
+export const SQL_LOAN_SEARCH = {
+    CARGAR: 'SELECT id_loan ,id_customer, description, start_date  \
+    FROM loans WHERE id_loan = $1',
 }

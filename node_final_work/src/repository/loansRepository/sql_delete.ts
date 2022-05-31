@@ -1,4 +1,4 @@
-export const SQL_AUTHOR_DELETE ={
-    DELETE: 'DELETE FROM authors WHERE id_author = $1'
+export const SQL_LOAN_DELETE ={
+    DELETE: 'DELETE FROM loans WHERE id_loan = $1'
 
 }

@@ -13,8 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const connectionDB_1 = __importDefault(require("../../settings/connection/connectionDB"));
-class EditorialCreate {
-    static createEditorial(sqlConfirm, sqlCreate, parameter, res) {
+class LoansCreate {
+    static createLoans(sqlConfirm, sqlCreate, parameter, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield connectionDB_1.default.task((consult) => __awaiter(this, void 0, void 0, function* () {
                 //.one retorna muchos datos
@@ -28,8 +28,8 @@ class EditorialCreate {
                 ;
             }))
                 .then((response) => {
-                if ((response === null || response === void 0 ? void 0 : response.id_editorial) != 0) {
-                    res.status(200).json({ answer: 'Create customer', newCode: response === null || response === void 0 ? void 0 : response.id_editorial });
+                if ((response === null || response === void 0 ? void 0 : response.id_loan) != 0) {
+                    res.status(200).json({ answer: 'Create loans', newCode: response === null || response === void 0 ? void 0 : response.id_loan });
                 }
                 else {
                     res.status(402).json({ answer: 'Error create register it is repeated' });
@@ -38,9 +38,9 @@ class EditorialCreate {
             })
                 .catch((meErr) => {
                 console.log('Error in daos: ', meErr);
-                res.status(400).json({ answer: 'Error in create from editorial.' });
+                res.status(400).json({ answer: 'Error in create from loans.' });
             });
         });
     }
 }
-exports.default = EditorialCreate;
+exports.default = LoansCreate;

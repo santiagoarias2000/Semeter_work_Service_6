@@ -1,9 +1,9 @@
-export const SQL_AUTHOR_CREATE = {
-    CREATE:'INSERT INTO authors(name,lastname,description,nationality) \
-    VALUES($1, $2, $3, $4) \
-    RETURNING id_author',
-    CONFIRM:'SELECT COUNT(pr.id_author) AS amount \
-    FROM authors pr \
-    WHERE (pr.name) = lower($1)',
+export const SQL_LOANS_CREATE = {
+    CREATE:'INSERT INTO loans(id_customer,description,start_date) \
+    VALUES($1, $2, $3) \
+    RETURNING id_loan',
+    CONFIRM:'SELECT COUNT(pr.id_loan) AS amount \
+    FROM loans pr \
+    WHERE (pr.description) = lower($1)',
 
 }

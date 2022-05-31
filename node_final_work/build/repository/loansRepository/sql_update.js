@@ -2,6 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SQL_AUTHOR_UPDATE = void 0;
 exports.SQL_AUTHOR_UPDATE = {
-    ACTUALIZAR: "UPDATE author SET name = $2,lastname = $3 ,description =$4, nationality = $5\
-    WHERE id_author=$1"
+    ACTUALIZAR: "UPDATE Loans SET id_customer = $2, description=$3, start_date=$4\
+    WHERE id_loan=$1"
 };

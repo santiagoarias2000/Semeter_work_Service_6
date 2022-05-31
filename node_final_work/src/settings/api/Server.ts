@@ -4,6 +4,7 @@ import express from 'express';
 import routesApiCustomer from '../../routes/CustomerRoutes';
 import routesApiEditorial from '../../routes/EditorialRoutes';
 import routesApiAuthor from '../../routes/AuthorRoutes';
+import routesApiLoans from '../../routes/LoansRoutes';
 
 
 class Server {
@@ -29,6 +30,7 @@ class Server {
         this.app.use('/api/customer', routesApiCustomer);
         this.app.use('/api/editorial', routesApiEditorial);
         this.app.use('/api/author', routesApiAuthor);
+        this.app.use('/api/loans', routesApiLoans);
     }
     
     public start(): void {
