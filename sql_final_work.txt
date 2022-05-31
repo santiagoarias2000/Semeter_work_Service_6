@@ -142,4 +142,8 @@ Bookd rest
 Details_loans service
 authors_book service
 -------------------------------------------------------------------------------------------------
-	
+NODE - PROYECT 
+Customer code finally
+editorial code finally
+authors code finally
+
