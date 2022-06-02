@@ -5,6 +5,9 @@ import routesApiCustomer from '../../routes/CustomerRoutes';
 import routesApiEditorial from '../../routes/EditorialRoutes';
 import routesApiAuthor from '../../routes/AuthorRoutes';
 import routesApiLoans from '../../routes/LoansRoutes';
+import routesApiBook from '../../routes/BookRoutes';
+import routesApiDetailLoan from '../../routes/DetailLoanRoutes';
+import routesApiAuthorBook from '../../routes/AuthorBookRoutes';
 
 
 class Server {
@@ -31,6 +34,9 @@ class Server {
         this.app.use('/api/editorial', routesApiEditorial);
         this.app.use('/api/author', routesApiAuthor);
         this.app.use('/api/loans', routesApiLoans);
+        this.app.use('/api/book', routesApiBook);
+        this.app.use('/api/detailLoan', routesApiDetailLoan);
+        this.app.use('/api/authorBook', routesApiAuthorBook);
     }
     
     public start(): void {

@@ -1,5 +1,7 @@
 package com.usta.finally_work.rest;
 
+import com.usta.finally_work.model.Customers;
+import com.usta.finally_work.model.Editorials;
 import com.usta.finally_work.model.Loans;
 import com.usta.finally_work.service.LoansService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +55,8 @@ public class LoansRest {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
-    @GetMapping(value = "/total")
-    private ResponseEntity<String> listarTotalCliente(){
-        return ResponseEntity.ok("El total de clientes es: ");
+    @GetMapping("/dept/{id}")
+    public ResponseEntity<List<Customers>> getDeptCustomerId(@PathVariable("id") Long id) {
+        return new ResponseEntity<List<Customers>>(loansService.getDeptCustomer(id), HttpStatus.OK);
     }
 }

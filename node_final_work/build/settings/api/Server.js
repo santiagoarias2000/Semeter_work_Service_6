@@ -10,6 +10,9 @@ const CustomerRoutes_1 = __importDefault(require("../../routes/CustomerRoutes"))
 const EditorialRoutes_1 = __importDefault(require("../../routes/EditorialRoutes"));
 const AuthorRoutes_1 = __importDefault(require("../../routes/AuthorRoutes"));
 const LoansRoutes_1 = __importDefault(require("../../routes/LoansRoutes"));
+const BookRoutes_1 = __importDefault(require("../../routes/BookRoutes"));
+const DetailLoanRoutes_1 = __importDefault(require("../../routes/DetailLoanRoutes"));
+const AuthorBookRoutes_1 = __importDefault(require("../../routes/AuthorBookRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -28,6 +31,9 @@ class Server {
         this.app.use('/api/editorial', EditorialRoutes_1.default);
         this.app.use('/api/author', AuthorRoutes_1.default);
         this.app.use('/api/loans', LoansRoutes_1.default);
+        this.app.use('/api/book', BookRoutes_1.default);
+        this.app.use('/api/detailLoan', DetailLoanRoutes_1.default);
+        this.app.use('/api/authorBook', AuthorBookRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('PORT'), () => {

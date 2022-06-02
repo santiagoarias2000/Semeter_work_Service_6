@@ -1,5 +1,6 @@
 package com.usta.finally_work.service;
 
+import com.usta.finally_work.model.Books;
 import com.usta.finally_work.model.DetailsLoans;
 import com.usta.finally_work.repository.DetailsLoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,9 @@ public class DetailsLoansService {
 
     public void deleteDetailsLoans(Long id){
         detailsLoansRepository.deleteById(id);
+    }
+    public List<Books> getDeptBook(Long id) {
+        List<Books> list = detailsLoansRepository.nameBook(id);
+        return list;
     }
 }

@@ -1,5 +1,7 @@
 package com.usta.finally_work.service;
 
+import com.usta.finally_work.model.Customers;
+import com.usta.finally_work.model.Editorials;
 import com.usta.finally_work.model.Loans;
 import com.usta.finally_work.repository.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +28,9 @@ public class LoansService {
 
     public void deleteById(Long id){
         loansRepository.deleteById(id)  ;
+    }
+    public List<Customers> getDeptCustomer(Long id) {
+        List<Customers> list = loansRepository.nameCustomer(id);
+        return list;
     }
 }

@@ -23,13 +23,13 @@ class AuthorCreate {
                     return yield consult.one(sqlCreate, parameter);
                 }
                 else {
-                    return { id_customer: 0 };
+                    return { id_author: 0 };
                 }
                 ;
             }))
                 .then((response) => {
-                if ((response === null || response === void 0 ? void 0 : response.id_customer) != 0) {
-                    res.status(200).json({ answer: 'Create author', newCode: response === null || response === void 0 ? void 0 : response.id_customer });
+                if ((response === null || response === void 0 ? void 0 : response.id_author) != 0) {
+                    res.status(200).json({ answer: 'Create author', newCode: response === null || response === void 0 ? void 0 : response.id_author });
                 }
                 else {
                     res.status(402).json({ answer: 'Error create register it is repeated' });

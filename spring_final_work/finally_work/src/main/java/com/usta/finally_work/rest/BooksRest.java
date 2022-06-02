@@ -1,6 +1,7 @@
 package com.usta.finally_work.rest;
 
 import com.usta.finally_work.model.Books;
+import com.usta.finally_work.model.Editorials;
 import com.usta.finally_work.service.BooksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -54,8 +55,9 @@ public class BooksRest {
         }
     }
 
-    @GetMapping(value = "/total")
-    private ResponseEntity<String> listarTotalCliente(){
-        return ResponseEntity.ok("El total de clientes es: ");
+
+    @GetMapping("/dept/{id}")
+    public ResponseEntity<List<Editorials>> getDeptEditorialId(@PathVariable("id") Long id) {
+        return new ResponseEntity<List<Editorials>>(booksService.getDeptEditorial(id), HttpStatus.OK);
     }
 }

@@ -7,7 +7,7 @@ const ToListo_1 = __importDefault(require("../../daos/editorialDaos/ToListo"));
 const sql_toList_1 = require("../../repository/editorialsRepository/sql_toList");
 class EditorialControllerGet extends ToListo_1.default {
     getMeCustomer(req, res) {
-        EditorialControllerGet.getCustomers(sql_toList_1.SQL_EDITORIAL_VIEW.VIEW, [], res);
+        EditorialControllerGet.getEditorial(sql_toList_1.SQL_EDITORIAL_VIEW.VIEW, [], res);
     }
 }
 const editorialControllerGet = new EditorialControllerGet();

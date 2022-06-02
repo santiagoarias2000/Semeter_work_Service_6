@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const connectionDB_1 = __importDefault(require("../../settings/connection/connectionDB"));
 class EditorialToList {
-    static getCustomers(sqlConsult, parameter, res) {
+    static getEditorial(sqlConsult, parameter, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield connectionDB_1.default.result(sqlConsult, parameter)
                 .then((result) => {

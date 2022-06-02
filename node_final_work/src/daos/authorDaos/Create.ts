@@ -9,12 +9,12 @@ class AuthorCreate{
             if (data.amount == 0) {
                 return await consult.one(sqlCreate, parameter);
             } else {
-                return {id_customer : 0 };
+                return {id_author : 0 };
             };
         })
             .then((response) => {
-                if (response?.id_customer != 0) {
-                    res.status(200).json({ answer: 'Create author', newCode: response?.id_customer });
+                if (response?.id_author != 0) {
+                    res.status(200).json({ answer: 'Create author', newCode: response?.id_author });
                 } else {
                     res.status(402).json({ answer: 'Error create register it is repeated' })
                 };

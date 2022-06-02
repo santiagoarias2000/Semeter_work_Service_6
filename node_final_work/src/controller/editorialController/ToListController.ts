@@ -4,7 +4,7 @@ import { SQL_EDITORIAL_VIEW } from "../../repository/editorialsRepository/sql_to
 
 class EditorialControllerGet extends EditorialToList{
     public getMeCustomer(req: Request, res: Response): void{
-        EditorialControllerGet.getCustomers(SQL_EDITORIAL_VIEW.VIEW, [], res);
+        EditorialControllerGet.getEditorial(SQL_EDITORIAL_VIEW.VIEW, [], res);
     } 
 }
 const editorialControllerGet = new EditorialControllerGet();

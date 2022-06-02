@@ -1,6 +1,8 @@
 package com.usta.finally_work.service;
 
 import com.usta.finally_work.model.Books;
+import com.usta.finally_work.model.DetailsLoans;
+import com.usta.finally_work.model.Editorials;
 import com.usta.finally_work.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +28,9 @@ public class BooksService {
     }
     public void deleteBooks(Long id){
         booksRepository.deleteById(id);
+    }
+    public List<Editorials> getDeptEditorial(Long id) {
+        List<Editorials> list = booksRepository.nameEditorials(id);
+        return list;
     }
 }

@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const CreateContoller_1 = __importDefault(require("../controller/loansController/CreateContoller"));
+const CustomerLoansContoller_1 = __importDefault(require("../controller/loansController/CustomerLoansContoller"));
 const DeleteController_1 = __importDefault(require("../controller/loansController/DeleteController"));
 const SearchController_1 = __importDefault(require("../controller/loansController/SearchController"));
 const ToListController_1 = __importDefault(require("../controller/loansController/ToListController"));
@@ -18,6 +19,7 @@ class LoansRoutes {
         this.routesApiLoans.post('/create', CreateContoller_1.default.createMeCustomer);
         this.routesApiLoans.get('/search/:elCodigo', SearchController_1.default.busqueUnoMano);
         this.routesApiLoans.delete('/delete/:elCodigo', DeleteController_1.default.deleteCustomer);
+        this.routesApiLoans.get('/searchCustomer/:elCodigo', CustomerLoansContoller_1.default.busqueCustomer);
     }
 }
 const loansRoutes = new LoansRoutes();

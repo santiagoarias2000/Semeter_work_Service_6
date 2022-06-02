@@ -7,6 +7,7 @@ const express_1 = require("express");
 const CreateContoller_1 = __importDefault(require("../controller/editorialController/CreateContoller"));
 const DeleteController_1 = __importDefault(require("../controller/editorialController/DeleteController"));
 const SearchController_1 = __importDefault(require("../controller/editorialController/SearchController"));
+const SearchIdBookController_1 = __importDefault(require("../controller/editorialController/SearchIdBookController"));
 const ToListController_1 = __importDefault(require("../controller/editorialController/ToListController"));
 class EditorialRoutes {
     constructor() {
@@ -18,6 +19,7 @@ class EditorialRoutes {
         this.routesApiEditorial.post('/create', CreateContoller_1.default.createMeCustomer);
         this.routesApiEditorial.get('/search/:elCodigo', SearchController_1.default.busqueUnoMano);
         this.routesApiEditorial.delete('/delete/:elCodigo', DeleteController_1.default.deleteCustomer);
+        this.routesApiEditorial.get('/searchId/:elCodigo', SearchIdBookController_1.default.busqueId);
     }
 }
 const editorialRoutes = new EditorialRoutes();
